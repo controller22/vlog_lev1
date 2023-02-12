@@ -13,7 +13,8 @@ public class BoardReq {
 
     @Setter
     @Getter
-    public static class BoardUpdateReqDto{
+    public static class BoardUpdateRespDto {
+        private int id;
         private String title;
         private String content;
     }

@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import shop.mtcoding.blog1.dto.ResponseDto;
 import shop.mtcoding.blog1.dto.board.BoardReq.BoardSaveReqDto;
-import shop.mtcoding.blog1.dto.board.BoardReq.BoardUpdateReqDto;
+import shop.mtcoding.blog1.dto.board.BoardReq.BoardUpdateRespDto;
 import shop.mtcoding.blog1.handler.ex.CustomApiException;
 import shop.mtcoding.blog1.handler.ex.CustomException;
 import shop.mtcoding.blog1.model.Board;
@@ -56,7 +56,7 @@ public class BoardController {
     
     @PutMapping("/board/{id}/update")
     public @ResponseBody ResponseEntity<?> update(@PathVariable int id,
-            @RequestBody BoardUpdateReqDto boardUpdateRespDto)
+            @RequestBody BoardUpdateRespDto boardUpdateRespDto)
             throws Exception {
         // System.out.println(boardUpdateRespDto.getTitle());
         User principal = (User) session.getAttribute("principal");
@@ -95,7 +95,7 @@ public class BoardController {
         if (BoardSaveReqDto.getContent() == null || BoardSaveReqDto.getContent().isEmpty()) {
             throw new CustomApiException("content를 작성해주세요");
         }
-        if (BoardSaveReqDto.getTitle().length() <= 100) {
+        if (BoardSaveReqDto.getTitle().length() > 100) {
             throw new CustomApiException("title의 길이가 100자 이하여야 합니다");
         }
 

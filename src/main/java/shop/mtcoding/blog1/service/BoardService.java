@@ -6,7 +6,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import shop.mtcoding.blog1.dto.board.BoardReq.BoardSaveReqDto;
-import shop.mtcoding.blog1.dto.board.BoardReq.BoardUpdateReqDto;
+import shop.mtcoding.blog1.dto.board.BoardReq.BoardUpdateRespDto;
 import shop.mtcoding.blog1.handler.ex.CustomApiException;
 import shop.mtcoding.blog1.model.Board;
 import shop.mtcoding.blog1.model.BoardRepository;
@@ -52,7 +52,7 @@ public class BoardService {
 
     }
     @Transactional
-    public void 게시글수정(int id, BoardUpdateReqDto boardUpdateRespDto, int principalId) {
+    public void 게시글수정(int id, BoardUpdateRespDto boardUpdateRespDto, int principalId) {
         Board boardPS = boardRepository.findById(id);
         if (boardPS == null) {
             throw new CustomApiException("해당 게시물을 찾을 수 없습니다.");
