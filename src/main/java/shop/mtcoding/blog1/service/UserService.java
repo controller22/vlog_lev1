@@ -1,5 +1,17 @@
 package shop.mtcoding.blog1.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import shop.mtcoding.blog1.dto.user.UserReq.JoinReqDto;
+import shop.mtcoding.blog1.handler.ex.CustomException;
+import shop.mtcoding.blog1.model.User;
+import shop.mtcoding.blog1.model.UserRepository;
+
+@Service
+public class UserService {
+
 @Autowired
     private UserRepository userRepository;
 
@@ -14,3 +26,4 @@ package shop.mtcoding.blog1.service;
             throw new CustomException("회원가입실패");
         }
     }
+}
