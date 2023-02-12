@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import shop.mtcoding.blog1.dto.ResponseDto;
 import shop.mtcoding.blog1.dto.board.BoardReq.BoardSaveReqDto;
+import shop.mtcoding.blog1.dto.board.BoardReq.BoardUpdateReqDto;
 import shop.mtcoding.blog1.handler.ex.CustomApiException;
 import shop.mtcoding.blog1.handler.ex.CustomException;
 import shop.mtcoding.blog1.model.Board;
