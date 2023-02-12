@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import shop.mtcoding.blog1.dto.user.UserReq.JoinReqDto;
+import shop.mtcoding.blog1.dto.user.UserReq.LoginReqDto;
 import shop.mtcoding.blog1.handler.ex.CustomException;
 import shop.mtcoding.blog1.model.User;
 import shop.mtcoding.blog1.service.UserService;
